@@ -1,0 +1,36 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/gesture_config_header">
+
+        <SeekBarPreference
+            app:key="flingDistanceAsSwipe"
+            app:title="@string/fling_distance_as_swipe_title"
+            app:defaultValue="300"
+            app:min="0"
+            android:max="2000"
+            app:showSeekBarValue="true"
+            app:summary="@string/fling_distance_as_swipe_summary"
+            app:useSimpleSummaryProvider="true" />
+
+        <SeekBarPreference
+            app:key="swipeDirectionRange"
+            app:title="@string/direction_rage_title"
+            app:defaultValue="30"
+            app:min="0"
+            android:max="90"
+            app:showSeekBarValue="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <SeekBarPreference
+            app:key="swipeVelocity"
+            app:title="@string/swipe_velocity_title"
+            app:defaultValue="1000"
+            app:min="0"
+            android:max="10000"
+            app:showSeekBarValue="true"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
