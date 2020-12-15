@@ -10,7 +10,6 @@
             app:min="0"
             android:max="2000"
             app:showSeekBarValue="true"
-            app:summary="@string/fling_distance_as_swipe_summary"
             app:useSimpleSummaryProvider="true" />
 
         <SeekBarPreference
@@ -28,6 +27,15 @@
             app:defaultValue="1000"
             app:min="0"
             android:max="10000"
+            app:showSeekBarValue="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <SeekBarPreference
+            app:key="clickableAreaRatio"
+            app:title="@string/clickable_area_ratio_title"
+            app:defaultValue="90"
+            app:min="0"
+            android:max="100"
             app:showSeekBarValue="true"
             app:useSimpleSummaryProvider="true" />
 

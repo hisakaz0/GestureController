@@ -3,7 +3,6 @@ package com.pinkienort.app.gesturecontroller
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.ActionMenuItem
 import androidx.preference.PreferenceFragmentCompat
 
 class GestureConfigActivity : AppCompatActivity() {
