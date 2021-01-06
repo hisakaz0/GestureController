@@ -2,6 +2,7 @@ package com.pinkienort.app.gesturecontroller
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.gesture.Gesture
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -85,8 +86,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this).all
-        gestureConfig = GestureConfig(prefs)
+        val savedPrefs = PreferenceManager.getDefaultSharedPreferences(this).all
+        gestureConfig = if (savedPrefs.isEmpty()) {
+          GestureConfig.DEFAULT
+        } else {
+          GestureConfig(savedPrefs)
+        }
         gestureHandler = GestureHandler(this, gestureConfig, gestureListener)
         gestureDetector = GestureDetectorCompat(this, gestureHandler)
         gestureDetector.setOnDoubleTapListener(gestureHandler)

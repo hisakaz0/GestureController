@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pinkienort.app.gesturecontroller">
+
+    <application>
+        <activity
+            android:name="com.pinkienort.app.gesturecontroller.GestureConfigActivity"
+            android:label="@string/title_activity_gesture_config"
+            android:theme="@style/Theme.MaterialComponents.DayNight"/>
+    </application>
+</manifest>

@@ -1,21 +1,20 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
-    id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlin_version"
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
-        applicationId "com.pinkienort.app.gesturecontroller"
-        minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -23,9 +22,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-    buildFeatures {
-        viewBinding = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -37,15 +33,11 @@ android {
 }
 
 dependencies {
-    implementation project(":gesture")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation deps.corektx
     implementation deps.appcompat
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
     implementation deps.material
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation deps.prefktx
-    implementation 'com.jakewharton.timber:timber:4.7.1'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

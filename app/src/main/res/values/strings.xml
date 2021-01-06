@@ -1,15 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GestureController</string>
-    <string name="title_activity_gesture_config">GestureConfigActivity</string>
-
-    <string name="menu_setting_title">設定</string>
-
-    <string name="gesture_config_header">ジェスチャー検出設定</string>
-
-    <string name="direction_rage_title">スワイプ検出角度</string>
-    <string name="fling_distance_as_swipe_title">スワイプ検出距離</string>
-    <string name="swipe_velocity_title">スワイプ検出速度</string>
-    <string name="tools_gesture_name_text_view">swipe to left</string>
-    <string name="tools_log_text_view">fling: [dist: 393.9917, angle:1.6004546, velocity: 2024.0215, x:393.9917, y:-11.008301, vx:-2024.0215, vy:-134.9171]</string>
-    <string name="clickable_area_ratio_title">タップ反応領域の割合</string>
 </resources>

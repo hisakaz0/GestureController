@@ -1,27 +1,16 @@
 package com.pinkienort.app.gesturecontroller
 
 import android.content.Context
-import android.graphics.Point
 import android.graphics.Rect
 import android.util.Size
 import android.view.GestureDetector
 import android.view.MotionEvent
 import kotlin.math.*
 
-
-operator fun Rect.contains(pos: Point): Boolean {
-    return contains(pos.x, pos.y)
-}
-
-operator fun Rect.contains(pos: Pair<Int, Int>): Boolean {
-    val (x, y) = pos
-    return contains(x, y)
-}
-
 class GestureHandler(
-    context: Context,
-    config: GestureConfig,
-    private val listener: OnGestureListener
+  context: Context,
+  config: GestureConfig,
+  private val listener: OnGestureListener
 ) : GestureDetector.OnGestureListener,
     GestureDetector.OnDoubleTapListener {
 
@@ -148,7 +137,7 @@ class GestureHandler(
     }
 
     override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-        return true
+        return false
     }
 
     override fun onDoubleTap(e: MotionEvent): Boolean {
@@ -156,13 +145,13 @@ class GestureHandler(
         when (pos) {
             in leftSide -> listener.onDoubleTapInLeftSide()
             in rightSide -> listener.onDoubleTapInRightSide()
+            else -> return false
         }
         listener.onGestureEvent("double tap: $e")
         return true
     }
 
     override fun onDoubleTapEvent(e: MotionEvent): Boolean {
-        return true
+        return false
     }
 }
-
